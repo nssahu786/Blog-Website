@@ -13,10 +13,10 @@ const image_middleware = require('../middleware/image_middleware')
 
 
 router.get('/',BlockController.home)   
-router.get('/about',auth,BlockController.about)    
-router.get('/contact',auth,BlockController.contact) 
-router.get('/login',auth,BlockController.login)    
-router.get('/blog',auth,BlockController.blog) 
+router.get('/about',BlockController.about)    
+router.get('/contact',BlockController.contact) 
+router.get('/login',BlockController.login)    
+router.get('/blog',BlockController.blog) 
 router.get('/detail/:id',auth,BlockController.detail)
 router.get('/detail/display',auth,BlockController.DisplayCategory) 
 
