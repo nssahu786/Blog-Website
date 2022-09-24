@@ -1,0 +1,44 @@
+<%- include("../header.ejs")  %>
+
+<section class="login-wrap mtb-40">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="dash-left">
+                    <ul>
+                        <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
+                        <li><a href="/admin/createblog">CREATE BLOGS</a></li>
+                        <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
+                        <li><a href="/admin/createcategory">CREATE CATEGORY</a></li>
+                        <li><a href="/admin/categorydisplay">DISPLAY CATEGORY</a></li>
+                        <li><a href="/curd/create">CREATE CURD</a></li>
+                        <li><a href="/curd/display">DISPLAY CURD</a></li>
+                        <li><a href="/admin/contactdisplay">DISPLAY CONTACT</a></li>
+                        <li><a href="/logout">LOGOUT</a></li>
+                    </ul>
+                </div>   
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="login-box">
+                    <h1>Add Student</h1>
+                    <form action="/curd/insert" method="post">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Log In</button>
+                        </div>
+                    </form>
+                </div>         
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+
+<%- include("../footer.ejs")  %>
+

@@ -1,0 +1,54 @@
+<%- include("../../header.ejs")  %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
+                            <li><a href="/admin/createblog">CREATE BLOGS</a></li>
+                            <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
+                            <li><a href="/admin/createcategory">CREATE CATEGORY</a></li>
+                            <li><a href="/admin/categorydisplay">DISPLAY CATEGORY</a></li>
+                            <li><a href="/curd/create">CREATE CURD</a></li>
+                            <li><a href="/curd/display">DISPLAY CURD</a></li>
+                            <li><a href="/admin/contactdisplay">DISPLAY CONTACT</a></li>
+                            <li><a href="/logout">LOGOUT</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                          <div class="dash-title">
+                              <h1>Create Category</h1>
+                          </div>
+                        </div>
+                        <div class="blog-form">
+                          <form action="/admin/categoryinsert" method="post">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Category name <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <input type="text" class="form-control" placeholder="name" name="cname" required>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group form-row">
+                                <label class="col-md-3">description <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <input type="text" class="form-control" placeholder="description" name="description" required>
+                                </div>
+                            </div> -->
+                            <button type="submit" class="btn btn-info">submit</button>
+                          </form>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include("../../footer.ejs")  %>
+

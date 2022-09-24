@@ -1,0 +1,61 @@
+
+
+.header{
+    background-color: #09cf09;
+    /* background-color: #588c7e; */
+}
+.font{
+    font-family: cursive;
+    font-size: 18px;
+}
+.logo{
+    border-radius:40px;
+    margin-right: 10px;
+    width: 70px;
+    height: 43px;
+}
+.menu{
+    margin-left: 260px;
+}
+.menuitem{
+    font-weight: 600;
+    font-size: 22px;
+    color: white;
+}
+.menuitem:hover{
+    color: blue;
+}
+.btn{
+    border-radius: 25px;
+}
+
+
+
+.slider{
+    height: 500px;
+}
+.title{
+    color: green;
+}
+.bot1{
+    color: white;
+    background-color: red;
+}
+.card{
+    transition: transform 0.5s;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+
+
+
+
+@media(max-width: 700px){
+    .menu{
+        margin-left: 0;
+    }
+    .slider{
+        height: 220px;
+    }
+}

@@ -1,0 +1,59 @@
+<%- include('../../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
+                            <li><a href="/admin/createblog">CREATE BLOGS</a></li>
+                            <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
+                            <li><a href="/admin/createcategory">CREATE CATEGORY</a></li>
+                            <li><a href="/admin/categorydisplay">DISPLAY CATEGORY</a></li>
+                            <li><a href="/curd/create">CREATE CURD</a></li>
+                            <li><a href="/curd/display">DISPLAY CURD</a></li>
+                            <li><a href="/admin/contactdisplay">DISPLAY CONTACT</a></li>
+                            <li><a href="/logout">LOGOUT</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                            <div class="dash-title">
+                                <h1 class="">VIEW BLOGS</h1>
+                            </div>
+                            <div class="dash-nav">
+                                <a href="/admin/createblog" class="btn btn-success">Add Post</a>
+                            </div>
+                        </div>
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>S.NO.</th>
+                                <th>#ID</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                        
+                        
+                            </tr>
+                            <% var i=1 %>
+                            <!-- console.log(item) -->
+                            <tr>
+                                <td><%= i++ %></td>
+                                <td><%= data._id %></td>
+                                <td><%= data.title %></td>
+                                <td><%= data.description %></td>
+                                <td><img src="/imageupload/<%= data.image %>" alt="" width="114px" height="80px" style="margin-top:20px;" ></td>
+                            </tr>
+                        </table>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../../footer.ejs') %>

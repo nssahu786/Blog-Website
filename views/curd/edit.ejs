@@ -1,0 +1,56 @@
+<%- include('../header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/createblog">Create Blogs</a></li>
+                            <li><a href="/admin/displayblog">Blogs Display</a></li>
+                            <li><a href="/admin/createcategory">Create Category</a></li>
+                            <li><a href="/admin/categorydisplay"> Category Display</a></li>
+                            <li><a href="/about"> About</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <div class="dash-header">
+                          <div class="dash-title">
+                              <h1 class="text-danger">EDIT CURD</h1>
+                          </div>
+                        </div>
+                        <div class="blog-form">
+                          <form action="/curd/update/<%= data._id %>" method="post">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Name <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <input name="name" type="text" class="form-control" placeholder="name" required value="<%= data.name %>">
+                                </div>
+                            </div>                            
+                            <div class="form-group form-row">
+                                <label class="col-md-3">email <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input name="email" type="text" class="form-control" placeholder="email" required value="<%= data.email %>">
+                                  </div>
+                            </div>
+                            <div class="form-group form-row">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                  <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                          </form>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<%- include('../footer.ejs') %>
