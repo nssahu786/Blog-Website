@@ -6,30 +6,50 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="dash-left">
-                            <ul>
-                                <li class="active"><a href="/admin/dashboard">DASHBOARD</a></li>
-                            <li><a href="/admin/createblog">CREATE BLOGS</a></li>
-                            <li><a href="/admin/displayblog">DISPLAY BLOGS</a></li>
-                            <li><a href="/admin/createcategory">CREATE CATEGORY</a></li>
-                            <li><a href="/admin/categorydisplay">DISPLAY CATEGORY</a></li>
-                            <li><a href="/curd/create">CREATE CURD</a></li>
-                            <li><a href="/curd/display">DISPLAY CURD</a></li>
-                            <li><a href="/admin/contactdisplay">DISPLAY CONTACT</a></li>
-                            <li><a href="/logout">LOGOUT</a></li>
-                            </ul>
+                            <div class="position-sticky">
+                                <div class="list-group list-group-flush mx-3 mt-4">
+                                    <a href="/admin/nishant/dashboard" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                                        <i class="fas fa-tachometer-alt fa-fw me-3" style="color: blue;"></i><span class="text-danger">DASHBOARD</span>
+                                    </a>
+                                    <a href="/admin/createblog" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: greenyellow;"></i><span style="padding-left: 20px;">CREATE BLOGS</span>
+                                    </a>
+                                    <a href="/admin/displayblog" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-solid fa-eye" style="color: yellow;"></i><span style="padding-left: 20px;">DISPLAY BLOGS</span>
+                                    </a>
+                                    <a href="/admin/createcategory" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: greenyellow;"></i><span style="padding-left: 20px;">CREATE CATEGORY</span>
+                                    </a>
+                                    <a href="/admin/categorydisplay" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-solid fa-eye" style="color: yellow;"></i><span style="padding-left: 20px;">DISPLAY CATEGORY</span>
+                                    </a>
+                                    <a href="/curd/create" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-sharp fa-solid fa-pen-to-square" style="color: greenyellow;"></i><span style="padding-left: 20px;">CREATE CURD</span>
+                                    </a>
+                                    <a href="/curd/display" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-solid fa-eye" style="color: yellow;"></i><span style="padding-left: 20px;">DISPLAY CURD</span>
+                                    </a>
+                                    <a href="/admin/contactdisplay" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-solid fa-eye" style="color: yellow;"></i><span style="padding-left: 20px;">DISPLAY CONTACTS</span>
+                                    </a>
+                                    <a href="/logout" class="list-group-item list-group-item-action py-2 ripple active">
+                                        <i class="fa-sharp fa-solid fa-right-from-bracket"></i><span style="padding-left: 20px;">LOGOUT</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-9">
                         <div class="dash-right">
                             <div class="dash-header">
                                 <div class="dash-title">
-                                    <h1 class="text-info">Edit Category</h1>
+                                    <h1 class="text-success text-center">EDIT CATEGORY</h1>
                                 </div>
                             </div>
                             <div class="blog-form">
                                 <form action="/admin/categoryupdate/<%= data._id %>" method="post">
                                     <div class="form-group form-row">
-                                        <label class="col-md-3">Category name <span class="required">*</span></label>
+                                        <label class="col-md-3 text-center text-danger">CATEGORY NAME <span class="required">*</span></label>
                                         <div class="col-md-9">
                                             <input name="cname" type="text" class="form-control" placeholder="Title"
                                                 required value="<%= data.cname %>">
@@ -38,7 +58,7 @@
 
                                     <label class="col-md-3"></label>
                                     <div class="col-md-9">
-                                        <button type="submit" class="btn btn-primary">Update</button>
+                                        <button type="submit" class="btn btn-primary btn-lg">UPDATE</button>
                                     </div>
                             </div>
                             </form>

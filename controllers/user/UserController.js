@@ -42,25 +42,38 @@ class UserController{
     }
     static verifylogin = async(req,res)=>{   console.log(req.body);
         try{
-            const{email,password}=req.body
-            const User = await UserModel.findOne({email:email})
-            if(User!=null){
-                const isMatch = await bcrypt.compare(password,User.password)
-                if((User.email==email)&& isMatch){
-                    const token = jwt.sign({ userid: User._id }, 'souravrajputrjitgwalior');
-                    res.cookie('jwt',token)
-                    res.redirect('/admin/dashboard')
-                }else{
-                    req.flash('error','**EMAIL AND PASSWORD DOES NO MATCH**')
+                const {email, password} = req.body
+                const User = await UserModel.findOne({email:email})
+                if ( User!=null )
+                {
+                    const isMatch = await bcrypt.compare(password,User.password)
+                    if (( User.email==email )&& isMatch )
+                    {
+                        const token = jwt.sign({ userid: User._id }, 'souravrajputrjitgwalior');
+                        res.cookie('jwt',token)
+                        if (User.role == 'student')   //MULTIPLE LOGIN
+                        {
+                            res.redirect('/admin/dashboard');
+                        }
+                        else if (User.role == 'admin')
+                        {
+                            return res.redirect("/admin/nishant/dashboard");
+                        }
+
+                    
+                    }else
+                    {
+                        req.flash('error','**EMAIL AND PASSWORD DOES NO MATCH**')
+                        res.redirect('/login')
+                    }
+                }else
+                {
+                    req.flash('error','**YOU ARE NOT A REGISTERED USER !**')
                     res.redirect('/login')
                 }
-            }else{
-                req.flash('error','**YOU ARE NOT A REGISTERED USER !**')
-                res.redirect('/login')
-            }
-        }catch(err){
+            }catch(err){
             console.log(err);
-        }
+            }
     }
     static logout = async(req,res)=>{
         try{

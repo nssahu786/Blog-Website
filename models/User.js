@@ -15,6 +15,10 @@ const UserSchema = new mongoose.Schema({          //object
     password:{
         type:String,
         Required:true,
+    },
+    role: {
+        type: String,
+        default: 'student'
     }
 },{timestamps:true})
 

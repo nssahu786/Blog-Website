@@ -9,8 +9,7 @@ const CheckUserAuth = async(req,res,next)=>{
         }else{
         const verifyuser = jwt.verify(token,'souravrajputrjitgwalior')
         const user = await UserModel.findOne({_id:verifyuser.userid}) 
-        req.user = user
-        console.log(user);      
+        req.user = user     
         next();
         }
     }catch(err){
@@ -19,6 +18,18 @@ const CheckUserAuth = async(req,res,next)=>{
    
 }
 
+const AuthRole = (roles) =>{
+    return(req,res,next) =>{
+        if (!roles.includes(req.user.role)){
+            return res.redirect('/admin/nishant/dashboard')
+        }
+        next()
+    }
+}
 
 
-module.exports = CheckUserAuth
+
+module.exports = {
+    CheckUserAuth,
+    AuthRole
+}

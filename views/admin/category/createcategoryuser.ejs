@@ -1,4 +1,5 @@
-<%- include("../header.ejs")  %>
+<%- include("../../header.ejs")  %>
+
 <section class="dashboard-wrap mtb-40">
     <div class="container">
         <div class="body-content">
@@ -17,12 +18,28 @@
                 </div>
                 <div class="col-md-9">
                     <div class="dash-right">
-                        <h1>Welcome : <%= n %></h1>
-                        <p>Email : <%= e %></p>
+                        <div class="dash-header">
+                          <div class="dash-title">
+                              <h1>Create Category</h1>
+                          </div>
+                        </div>
+                        <div class="blog-form">
+                          <form action="/admin/categoryinsertuser" method="post">
+                            <div class="form-group form-row">
+                                <label class="col-md-3">Category name <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                  <input type="text" class="form-control" placeholder="name" name="cname" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info">submit</button>
+                          </form>
+                        </div>
                     </div>   
                 </div>
             </div>
         </div>
     </div>
 </section>
-<%- include("../footer.ejs")  %>
+
+<%- include("../../footer.ejs")  %>
+
