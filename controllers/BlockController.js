@@ -9,7 +9,6 @@ class BlockController{
         }catch(err){
             console.log(err);
         }
-        res.render('home')
     }
     static detail = async(req,res) =>{
         try{
