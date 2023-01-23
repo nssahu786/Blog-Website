@@ -22,7 +22,7 @@ router.get('/detail/display',BlockController.DisplayCategory)
 
 router.get('/admin/dashboard',CheckUserAuth,AdminController.dashboard)
 router.get('/admin/nishant/dashboard',CheckUserAuth,AuthRole('admin'),AdminController.admindashboard)
-router.get('/admin/createuser',CheckUserAuth,BlogController.createbloguser)
+router.get('/admin/createuser',CheckUserAuth,AuthRole('admin'),BlogController.createbloguser)
 router.get('/admin/createblog',CheckUserAuth,BlogController.createblog)
 router.post('/bloginsertuser',image_middleware,BlogController.bloginsertuser)
 router.post('/bloginsert',image_middleware,BlogController.bloginsert)
